@@ -1,5 +1,6 @@
 var car = document.querySelector('img');
 window.addEventListener('keydown', steerCar);
+window.addEventListener('keydown', driveCar);
 function steerCar() {
   if (event.key === 'ArrowUp') {
     car.setAttribute('class', 'rotate-up');
@@ -13,4 +14,9 @@ function steerCar() {
   if (event.key === 'ArrowRight') {
     car.setAttribute('class', 'rotate-right');
   }
+}
+function driveCar() {
+  // if (event.key === ' ') {
+
+  // }
 }

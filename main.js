@@ -1,11 +1,12 @@
 var data = {
   x: 10,
-  y: 0
+  y: 0,
+  driving: false
 };
 
 var car = document.querySelector('img');
-window.addEventListener('keydown', steerCar);
-function steerCar(event) {
+window.addEventListener('keydown', driveCar);
+function driveCar(event) {
   if (event.key === 'ArrowUp') {
     car.setAttribute('class', 'rotate-up');
   }
@@ -19,9 +20,9 @@ function steerCar(event) {
     car.setAttribute('class', 'rotate-right');
   }
   if (event.key === ' ') {
+    data.driving = true;
     setInterval(function driveCar(event) {
       car.style.left = (data.x++) + 'px';
-    //  console.log(data.x);
     }, 16);
   }
 }

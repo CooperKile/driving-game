@@ -1,7 +1,11 @@
+var data = {
+  x: 10,
+  y: 0
+};
+
 var car = document.querySelector('img');
 window.addEventListener('keydown', steerCar);
-window.addEventListener('keydown', driveCar);
-function steerCar() {
+function steerCar(event) {
   if (event.key === 'ArrowUp') {
     car.setAttribute('class', 'rotate-up');
   }
@@ -14,9 +18,10 @@ function steerCar() {
   if (event.key === 'ArrowRight') {
     car.setAttribute('class', 'rotate-right');
   }
-}
-function driveCar() {
-  // if (event.key === ' ') {
-
-  // }
+  if (event.key === ' ') {
+    setInterval(function driveCar(event) {
+      car.style.left = (data.x++) + 'px';
+    //  console.log(data.x);
+    }, 16);
+  }
 }

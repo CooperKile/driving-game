@@ -5,6 +5,7 @@ body {
 img {
   height: 10em;
   width: auto;
+  position: absolute;
 }
 
 .rotate-left {
